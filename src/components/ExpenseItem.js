@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { TiDelete } from 'react-icons/ti';
 import { AppContext } from '../context/AppContext';
 
+
 const ExpenseItem = (props) => {
     const { dispatch } = useContext(AppContext);
 
@@ -29,7 +30,8 @@ const ExpenseItem = (props) => {
         <tr>
         <td>{props.name}</td>
         <td>£{props.cost}</td>
-        <td><button onClick={event=> increaseAllocation(props.name)}>+</button></td>
+        <td><button onClick={event=> increaseAllocation(props.name)} style={{borderRadius: '50%', color: 'white', backgroundColor: 'green', border: 'none' }}>+</button></td>
+        <td><button onClick={event=> increaseAllocation(props.name)} style={{borderRadius: '50%', color: 'white', backgroundColor: 'red', border: 'none'}}>-</button></td>
         <td><TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
         </tr>
     );
